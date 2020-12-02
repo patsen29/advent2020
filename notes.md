@@ -19,3 +19,10 @@ so I went with a regex. Pattern matching in Java is pretty clunky, but it beats 
 For regex, I like https://www.debuggex.com/ to help me write them and see what I'm doing.
 
 As for Big O notation, I need to count characters anyway, so looping over the string as chars seems fine.
+
+For the second half, we just need to change the logic a bit. The one-indexing and remembering the xor operator (^)
+are the main issues. 
+
+It's not hard to create a second function to check the new logic on the same input. But it's a bit awkward to do both
+at once. So, I made a data class for the parsed request, and allowed both functions to work on that input. The file
+format is the same, so the same data structure should be fine.
