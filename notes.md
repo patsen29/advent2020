@@ -10,4 +10,12 @@ Then, I can loop over the first number, still building the set as we go, and sea
 That should be O(n² log n). 
 
 We could probably generalize that even further, by having the inner search recurse to find tuples of any size 
-greater than 2. But that might go to O(n!) unbounded. It would make for cleaner code though. 
+greater than 2. But that might go to O(n!) unbounded. It would make for cleaner code though.
+
+# Day 2
+This looks like some basic string checking. The tough part is probably parsing the input itself, 
+so I went with a regex. Pattern matching in Java is pretty clunky, but it beats writing my own parser.
+
+For regex, I like https://www.debuggex.com/ to help me write them and see what I'm doing.
+
+As for Big O notation, I need to count characters anyway, so looping over the string as chars seems fine.
