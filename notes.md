@@ -26,3 +26,9 @@ are the main issues.
 It's not hard to create a second function to check the new logic on the same input. But it's a bit awkward to do both
 at once. So, I made a data class for the parsed request, and allowed both functions to work on that input. The file
 format is the same, so the same data structure should be fine.
+
+# Day 3
+This involves keeping track of a 2D map of tiles, and the map wraps horizontally, 
+so we can use modular arithmetic for that. 
+The file reader I'm using gives me a List of Strings, which is sort of a 2D array, given Strings are arrays of chars.
+So I can keep that as the map format, and then loop over rows, counting how many trees are in the way.
