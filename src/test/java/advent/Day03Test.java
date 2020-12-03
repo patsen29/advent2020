@@ -2,6 +2,7 @@ package advent;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,6 +25,11 @@ public class Day03Test {
 
     @Test
     public void testSampleMap() {
-        assertEquals(7, Day03.countTreesFirst(sampleMap, 3, 1));
+        assertEquals(2, Day03.countTreesOnPath(sampleMap, 1, 1));
+        assertEquals(7, Day03.countTreesOnPath(sampleMap, 3, 1));
+        assertEquals(3, Day03.countTreesOnPath(sampleMap, 5, 1));
+        assertEquals(4, Day03.countTreesOnPath(sampleMap, 7, 1));
+        assertEquals(2, Day03.countTreesOnPath(sampleMap, 1, 2));
+        assertEquals(336, Day03.countMultiplePaths(sampleMap));
     }
 }
