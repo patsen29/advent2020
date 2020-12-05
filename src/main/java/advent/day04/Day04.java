@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Day04 {
 
@@ -14,7 +15,8 @@ public class Day04 {
         List<String> passportData = Files.readAllLines(inputFile);
 
         List<Passport> passports = parseData(passportData);
-        System.out.println("Part 1: " + countValidPassports(passports));
+        System.out.println("Part 1: " + countValidPassports(passports, Passport::isValid));
+        System.out.println("Part 2: " + countValidPassports(passports, Passport::isValidExtended));
     }
 
     public static List<Passport> parseData(List<String> rawData) {
@@ -32,9 +34,9 @@ public class Day04 {
         return passports;
     }
 
-    public static long countValidPassports(List<Passport> passports) {
+    public static long countValidPassports(List<Passport> passports, Predicate<Passport> predicate) {
         return passports.stream()
-                .filter(Passport::isValid)
+                .filter(predicate)
                 .count();
     }
 }
